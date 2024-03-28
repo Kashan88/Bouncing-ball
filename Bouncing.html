@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <style>
+ body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #a06f13;
+  margin: 0;
+}
+
+ .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+ .ball {
+  width: 50px;
+  height: 50px;
+  background-color: #db3458;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 0 40px #eec540;
+  animation: bounce 1s infinite 
+  alternate;
+}
+
+.shadow {
+  width: 50px;
+  height: 10px;
+  background-color:
+ rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  transition: all.3s linear;
+  bottom: -10px;
+  left: 100px; 
+  transform: translateX(-50%);
+  animation: shadowAppear 2s infinite
+  linear;
+}
+
+@keyframes bounce {
+    0% {
+        bottom: 0;
+        height: 35px;
+    }
+    100% {
+        bottom: 150px;
+        
+    }
+}
+
+@keyframes shadowAppear {
+    0% {
+        opacity: 0.5;
+        width: 40px; 
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.2; 
+    }
+}
+ </style>
+</head>
+<body>
+  <div class="container">
+    <div class="ball"></div>
+    <div class="shadow"></div>
+  </div>
+</body>
+</html>
